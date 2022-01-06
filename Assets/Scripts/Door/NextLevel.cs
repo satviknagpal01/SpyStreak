@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
+using Weapon;
 using UnityEngine.SceneManagement;
 
 namespace Door
@@ -11,14 +12,15 @@ namespace Door
         public GameObject floorEvent;
         public GameObject player;
         public GameObject floorTimer;
-
+        public GameObject gun;
 
         private void OnTriggerEnter(Collider other)
         {
             floorTimer.SetActive(false);
-            StartCoroutine(Completed());
             player.GetComponent<FirstPersonController>().enabled = false;
+            gun.GetComponent<Gun>().enabled = false;
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
+            StartCoroutine(Completed());
         }
 
         IEnumerator Completed()

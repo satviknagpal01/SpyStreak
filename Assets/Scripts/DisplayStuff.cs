@@ -23,7 +23,9 @@ public class DisplayStuff : MonoBehaviour
     public static bool hasKey;
     public GameObject keyDisplay;
     public static int totalScore;
-
+    public static int floorDisplayNumber ;
+    public GameObject floorDisplay;
+    
     private void Start()
     {
         healthDisplayNumber = 100;
@@ -40,6 +42,7 @@ public class DisplayStuff : MonoBehaviour
         internalScore = ScoreDisplayNumber;
         internalLife = lifeDisplayNumber;
         internalHealth = healthDisplayNumber;
+        floorDisplayNumber = FloorComplete.floor;
         if (healthDisplayNumber >= 100)
         {
             healthDisplayNumber = 100;
@@ -49,6 +52,7 @@ public class DisplayStuff : MonoBehaviour
         healthDisplay.GetComponent<Text>().text = healthDisplayNumber + "%";
         scoreDisplay.GetComponent<Text>().text = ScoreDisplayNumber.ToString();
         finalScore.GetComponent<Text>().text = ScoreDisplayNumber.ToString();
+        floorDisplay.GetComponent<Text>().text = floorDisplayNumber.ToString();
         if(hasKey)
             keyDisplay.SetActive(true);
         if (!hasKey)

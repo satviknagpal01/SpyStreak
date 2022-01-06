@@ -38,7 +38,7 @@ namespace Main_Menu
             clickSound.Play();
             fadeOut.SetActive(true);
             yield return new WaitForSeconds(2);
-            SceneManager.LoadScene("Level001");
+            SceneManager.LoadScene(1);
         }
 
         public void ResetGame()
