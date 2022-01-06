@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 namespace Enemy
 {
@@ -16,7 +18,7 @@ namespace Enemy
         public int genHurt;
         public AudioSource[] hurtSound;
         public GameObject hurtFlash;
-        public float range = 20;
+        public float range = 30;
         public Transform player;
         public NavMeshAgent agent;
         

@@ -9,7 +9,8 @@ public class EnemyDeath : MonoBehaviour
     public GameObject enemyAI;
     public GameObject thisSoldier;
     public GameObject hurtDispplay;
-    
+    public GameObject ammoTrigger;
+
     // Start is called before the first frame update
     void DamageEnemy(int damageAmount)
     {
@@ -21,6 +22,7 @@ public class EnemyDeath : MonoBehaviour
     {
         if (enemyHealth <= 0 && !isDead)
         {
+            ammoTrigger.SetActive(true);
             isDead = true;
             thisSoldier.GetComponent<Animator>().Play("Die");
             DisplayStuff.ScoreDisplayNumber += 100;
